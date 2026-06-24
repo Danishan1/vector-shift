@@ -2,4 +2,8 @@
   display: flex;
   gap: var(--space-sm);
   width: max-content;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  height: var(--topbar-height);
 }

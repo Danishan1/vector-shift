@@ -19,7 +19,6 @@
 .toolbarWrapper {
   flex: 1;
   overflow-x: auto;
-  padding-right: var(--space-lg);
 }
 
 .toolbarWrapper::-webkit-scrollbar {
