@@ -8,10 +8,12 @@ export const createNodeTypes = () => {
 
       ({ id }) => (
         <BaseNode
+          id={id}
           label={config.label}
           inputs={config.inputs?.map((input) => `${id}-${input}`)}
-          outputs={config.outputs?.map((output) => `${id}-${output}`)}
+          outputs={config.outputs || []}
           fields={config.fields || []}
+          dynamicText={config.dynamicText}
         />
       ),
     ]),

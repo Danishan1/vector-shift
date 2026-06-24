@@ -30,7 +30,7 @@
 
 .input {
   height: var(--input-height);
-  padding: 0 var(--space-sm);
+  padding: var(--space-sm);
   background: var(--input-bg);
   border: var(--border-width) solid var(--input-border);
   border-radius: var(--radius-sm);

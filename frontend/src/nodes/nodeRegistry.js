@@ -65,6 +65,7 @@ export const nodeRegistry = {
   text: {
     label: "Text",
     outputs: ["output"],
+    dynamicText: true,
     fields: [
       {
         name: "text",
