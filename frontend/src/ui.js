@@ -11,6 +11,7 @@ import { LLMNode } from "./nodes/llmNode";
 import { OutputNode } from "./nodes/outputNode";
 import { TextNode } from "./nodes/textNode";
 import "reactflow/dist/style.css";
+import { useShallow } from "zustand/react/shallow";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -42,7 +43,17 @@ export const PipelineUI = () => {
     onNodesChange,
     onEdgesChange,
     onConnect,
-  } = useStore(selector, shallow);
+  } = useStore(
+    useShallow((state) => ({
+      nodes: state.nodes,
+      edges: state.edges,
+      getNodeID: state.getNodeID,
+      addNode: state.addNode,
+      onNodesChange: state.onNodesChange,
+      onEdgesChange: state.onEdgesChange,
+      onConnect: state.onConnect,
+    })),
+  );
 
   const getInitNodeData = (nodeID, type) => {
     let nodeData = { id: nodeID, nodeType: `${type}` };
@@ -92,7 +103,7 @@ export const PipelineUI = () => {
   return (
     <>
       <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
-        {/* <ReactFlow
+        <ReactFlow
           nodes={nodes}
           edges={edges}
           onNodesChange={onNodesChange}
@@ -109,7 +120,7 @@ export const PipelineUI = () => {
           <Background color="#aaa" gap={gridSize} />
           <Controls />
           <MiniMap />
-        </ReactFlow> */}
+        </ReactFlow>
       </div>
     </>
   );
