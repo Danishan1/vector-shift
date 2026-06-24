@@ -9,13 +9,12 @@ import { shallow } from "zustand/shallow";
 import "reactflow/dist/style.css";
 import { useShallow } from "zustand/react/shallow";
 import { createNodeTypes } from "./nodes";
+import styles from "./ui.module.css";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 
 const nodeTypes = createNodeTypes();
-
-console.log("DDDD : ", nodeTypes)
 
 const selector = (state) => ({
   nodes: state.nodes,
@@ -97,7 +96,7 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
+      <div ref={reactFlowWrapper} className={styles.container}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -112,9 +111,16 @@ export const PipelineUI = () => {
           snapGrid={[gridSize, gridSize]}
           connectionLineType="smoothstep"
         >
-          <Background color="#aaa" gap={gridSize} />
+          <Background color="#6b96e7" gap={gridSize} />
           <Controls />
-          <MiniMap />
+          <MiniMap
+            style={{
+              background: "var(--panel-bg)",
+              border: "1px solid var(--node-border)",
+            }}
+            nodeColor="var(--node-bg)"
+            maskColor="rgba(0,0,0,0.5)"
+          />
         </ReactFlow>
       </div>
     </>

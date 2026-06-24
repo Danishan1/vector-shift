@@ -1,0 +1,23 @@
+.node {
+  width: var(--toolbar-node-width);
+  height: var(--toolbar-node-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--node-bg);
+  border: var(--border-width) solid var(--node-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--font-sm);
+  cursor: grab;
+  transition: var(--transition);
+}
+
+.node:hover {
+  background: #262a31;
+  border-color: #4b5563;
+}
+
+.node:active {
+  cursor: grabbing;
+}

@@ -1,17 +1,9 @@
 import { Handle, Position } from "reactflow";
+import styles from "./BaseNode.module.css";
 
 export const BaseNode = ({ label, inputs = [], outputs = [], fields = [] }) => {
   return (
-    <div
-      style={{
-        width: 220,
-        minHeight: 100,
-        border: "1px solid black",
-        borderRadius: 8,
-        padding: 10,
-        background: "white",
-      }}
-    >
+    <div className={styles.node}>
       {inputs.map((input, index) => (
         <Handle
           key={input}
@@ -24,17 +16,15 @@ export const BaseNode = ({ label, inputs = [], outputs = [], fields = [] }) => {
         />
       ))}
 
-      <strong>{label}</strong>
+      <div className={styles.header}>{label}</div>
 
-      <div>
-        {fields.map((field) => (
-          <div key={field.name}>
-            <label>{field.label}</label>
+      {fields.map((field) => (
+        <div className={styles.field} key={field.name}>
+          <label>{field.label}</label>
 
-            <input defaultValue={field.defaultValue} />
-          </div>
-        ))}
-      </div>
+          <input className={styles.input} defaultValue={field.defaultValue} />
+        </div>
+      ))}
 
       {outputs.map((output, index) => (
         <Handle

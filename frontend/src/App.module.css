@@ -1,0 +1,37 @@
+.app {
+  height: var(--app-height);
+  display: flex;
+  flex-direction: column;
+  background: var(--app-bg);
+  overflow: hidden;
+}
+
+.topbar {
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  background: var(--panel-bg);
+  border-bottom: var(--border-width) solid var(--node-border);
+}
+
+.toolbarWrapper {
+  flex: 1;
+  overflow-x: auto;
+  padding-right: var(--space-lg);
+}
+
+.toolbarWrapper::-webkit-scrollbar {
+  height: var(--space-xs);
+}
+
+.toolbarWrapper::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: var(--radius-lg);
+}
+
+.canvas {
+  flex: 1;
+  overflow: hidden;
+}

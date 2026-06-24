@@ -1,21 +1,14 @@
 import { DraggableNode } from "./draggableNode";
 import { nodeRegistry } from "./nodes";
 
+import styles from "./toolbar.module.css";
+
 export const PipelineToolbar = () => {
   return (
-    <div style={{ padding: "10px" }}>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "10px",
-        }}
-      >
-        {Object.entries(nodeRegistry).map(([type, config]) => (
-          <DraggableNode key={type} type={type} label={config.label} />
-        ))}
-      </div>
+    <div className={styles.toolbar}>
+      {Object.entries(nodeRegistry).map(([type, config]) => (
+        <DraggableNode key={type} type={type} label={config.label} />
+      ))}
     </div>
   );
 };
