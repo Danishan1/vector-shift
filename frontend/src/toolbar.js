@@ -1,6 +1,5 @@
-// toolbar.js
-
 import { DraggableNode } from "./draggableNode";
+import { nodeRegistry } from "./nodes";
 
 export const PipelineToolbar = () => {
   return (
@@ -13,10 +12,9 @@ export const PipelineToolbar = () => {
           gap: "10px",
         }}
       >
-        <DraggableNode type="customInput" label="Input" />
-        <DraggableNode type="llm" label="LLM" />
-        <DraggableNode type="customOutput" label="Output" />
-        <DraggableNode type="text" label="Text" />
+        {Object.entries(nodeRegistry).map(([type, config]) => (
+          <DraggableNode key={type} type={type} label={config.label} />
+        ))}
       </div>
     </div>
   );
