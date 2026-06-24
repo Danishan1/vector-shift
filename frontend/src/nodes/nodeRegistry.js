@@ -16,46 +16,46 @@ export const nodeRegistry = {
     inputs: ["system", "prompt"],
     outputs: ["response"],
   },
-  llm1: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm2: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm3: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm4: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm12: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm22: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm23: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
-  llm24: {
-    label: "LLM",
-    inputs: ["system", "prompt"],
-    outputs: ["response"],
-  },
+  // llm1: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm2: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm3: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm4: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm12: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm22: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm23: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
+  // llm24: {
+  //   label: "LLM",
+  //   inputs: ["system", "prompt"],
+  //   outputs: ["response"],
+  // },
 
   customOutput: {
     label: "Output",
